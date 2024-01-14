@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Salsa';
+    src: url(media/Salsa/Salsa-Regular.ttf);
+}
+
+#content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url(media/image.jpg);
+    background-position: bottom;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    background-attachment: fixed;
+
+    font-family: 'Salsa', monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    position: sticky;
+    top:0;
+    background-color: rgba(199,112,46,0.2);
+    color: white;
+    box-shadow: rgba(199,112,46,0.3) 0px 3.5px 4.5px 4.5px;
+    backdrop-filter: blur(10px);
+
+    h1 {
+        font-size: 3vh;
+    }
+}
+
+.main-nav > ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 1rem;
+
+    li {
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(120%);
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(199, 112, 46, 0.2);
+}
+
+#home {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.desc-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    background-color: rgba(68, 35, 9, 0.6);
+    color: #e9e5e5;
+}
+
+.why {
+    width: min-content;
+    display: flex;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    & span:last-of-type {
+        font-size: 15rem;
+    }
+}
+
+.desc {
+    flex: 1;
+    min-width: min(600px, 100vw);
+}
