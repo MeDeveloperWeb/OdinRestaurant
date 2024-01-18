@@ -1,6 +1,6 @@
-import htmlEl from "./render";
-import showSection from "./router";
-import { home, map, recipe } from "./svg";
+import htmlEl from "./utils/render";
+import setRoute from "./utils/router";
+import svg from "./svg";
 
 export function header () {
     const logo = htmlEl({tag:'h1', text:"Heavenly Restaurant", classList:["logo"]});
@@ -14,7 +14,6 @@ export function header () {
     })
 }
 
-
 export function footer () {
     return htmlEl({
         tag: "footer",
@@ -23,42 +22,30 @@ export function footer () {
 }
 
 function nav () {
-    const liEl = [
-        htmlEl({
-            tag: "li",
-            children: [home()],
-            props: {
-                "data-href": "home",
-            }
-        }),
-        htmlEl({
-            tag: "li",
-            children: [recipe()],
-            props: {
-                "data-href": "menu",
-            }
-        }),
-        htmlEl({
-            tag: "li",
-            children: [map()],
-            props: {
-                "data-href": "contact",
-            }
-        })
-    ];
-    for (let li of liEl) {
-        li.addEventListener('click', () => showSection(li.dataset.href));
-    }
     return htmlEl({
         tag: "nav",
         classList: ["main-nav"],
-        children: [
-            htmlEl(
-                {
+        children: [htmlEl({
                     tag: "ul",
-                    children: liEl
-                }
-            )
-        ]
+                    children: [
+                        navEl("home"),
+                        navEl("recipe"),
+                        navEl("contact")
+                    ]
+                })]
     });
+}
+
+function navEl(route) {
+    const li = htmlEl({
+        tag: "li",
+        children: [svg[route]()],
+        props: {
+            "data-href": route,
+        }
+    });
+
+    li.addEventListener("click", () => setRoute(li.dataset.href));
+
+    return li;
 }

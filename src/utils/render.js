@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {*} param0 
+ * @returns {HTMLElement} htmlEl
+ */
 export default function htmlEl ({tag, text = "", classList = [], id = "", children = [], props = {}, svg = false}) {
     const el = svg ? document.createElementNS("http://www.w3.org/2000/svg", tag) : document.createElement(tag);
     el.innerText = text;

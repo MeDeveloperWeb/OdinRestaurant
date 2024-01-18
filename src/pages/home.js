@@ -1,12 +1,7 @@
-import htmlEl from "./render"
-import whyUs from "./media/whyUs.txt"
+import htmlEl from "../utils/render"
+import whyUs from "../media/whyUs.txt"
 
 export default function home() {
-    const img = htmlEl({
-        tag: "div",
-        classList: ["main-img-cont"],
-    });
-
     const ques = htmlEl({
         tag: "div",
         classList: ["why"],
@@ -34,12 +29,18 @@ export default function home() {
         children: [ques, ans]
     })
 
+    const home = htmlEl({
+        tag: "div",
+        children: [
+            desc
+        ]
+    });
 
     return htmlEl({
         tag: "div",
         id: "home",
         children: [
-            desc
+            home
         ]
-    })
+    });
 }

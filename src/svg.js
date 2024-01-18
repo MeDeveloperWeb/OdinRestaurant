@@ -1,6 +1,6 @@
-import htmlEl from "./render";
+import htmlEl from "./utils/render";
 
-export function home(size="24") {
+function home(size="24") {
     /**
      *  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -26,7 +26,7 @@ export function home(size="24") {
             })
         ],
         props: {
-            viewBox: `0 0 ${size} ${size}`,
+            viewBox: `0 0 24 24`,
             "stroke-width":"2",
             "stroke-linecap":"round",
             "stroke-linejoin":"round",
@@ -39,7 +39,7 @@ export function home(size="24") {
     })
 }
 
-export function map(size="24") {
+function contact(size="24") {
     /**
      * <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
      *  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -67,7 +67,7 @@ export function map(size="24") {
             })
         ],
         props: {
-            viewBox: `0 0 ${size} ${size}`,
+            viewBox: `0 0 24 24`,
             "stroke-width":"2",
             "stroke-linecap":"round",
             "stroke-linejoin":"round",
@@ -80,7 +80,7 @@ export function map(size="24") {
     })
 }
 
-export function recipe(size="24") {
+function recipe(size="24") {
     /**
      * <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
             <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -112,3 +112,5 @@ export function recipe(size="24") {
         svg: true
     })
 }
+
+export default {home, contact, recipe};
